@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Mídia Interativa com Geolocalização</title>
+    <script src="localização.js" ></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        audio {
+            margin-top: 10px;
+        }
+        video {
+            margin-top: 10px;
+        }
+        button {
+            margin-right: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+    </style>    
+</head>
+<body>
+    <audio id = "audio" controls>
+
+        <source src="_JOJO _pillarmen _kars _jojo _fyp PILLAR MEN(MP3).mp3" type="audio/mpeg"> 
+
+    </audio> 
+    
+    <video id="video" width="400" controls>
+
+        <source src="Pillar men theme is too good _jojosbizarreadventure _pillarmentheme(MP4).mp4" type="video/mp4">
+
+    </video>
+
+    <button onclick="getLocation()">Pegar a localização</button>
+    <p id="status"></p>
+    <p id="location"></p>
+</body>
+</html>

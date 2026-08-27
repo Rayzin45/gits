@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário Aprimorado com Canvas ou SVG</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            max-width: 90%;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input:not([type="range"]) {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="range"] {
+            width: 100%;
+            margin: 10px 0 20px;
+        }
+
+        button {
+            background-color: #2d2dce;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #1f1fa8;
+        }
+
+        #resultado {
+            margin-top: 25px;
+        }
+
+        canvas {
+            width: 100%;
+            max-width: 400px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form id="meuFormulario">
+
+        <label for="name">Nome:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="data">Data de Nascimento:</label>
+        <input type="date" id="data" name="data" required>
+
+        <label for="telefone">Telefone:</label>
+        <input type="tel" id="telefone" name="telefone" required>
+
+        <label for="satisfacao">
+            Nível de satisfação:
+            <span id="valorSatisfacao">50</span>
+        </label>
+
+        <input
+            type="range"
+            id="satisfacao"
+            name="satisfacao"
+            min="0"
+            max="100"
+            value="50"
+        >
+
+        <button type="submit">Enviar</button>
+
+        <div id="resultado">
+            <canvas id="grafico" width="400" height="100"></canvas>
+        </div>
+
+    </form>
+
+    <script>
+        const formulario = document.getElementById("meuFormulario");
+        const range = document.getElementById("satisfacao");
+        const valorSatisfacao = document.getElementById("valorSatisfacao");
+        const canvas = document.getElementById("grafico");
+        const ctx = canvas.getContext("2d");
+
+        
+        range.addEventListener("input", function () {
+            valorSatisfacao.textContent = range.value;
+        });
+
+        
+        formulario.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const valor = Number(range.value);
+
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            ctx.fillStyle = "#dddddd";
+            ctx.fillRect(20, 25, 360, 30);
+
+            const larguraBarra = (valor / 100) * 360;
+
+            ctx.fillStyle = "#2d2dce";
+            ctx.fillRect(20, 25, larguraBarra, 30);
+
+            ctx.fillStyle = "#000000";
+            ctx.font = "16px Arial";
+            ctx.fillText("Nível de satisfação: " + valor + "%", 20, 80);
+        });
+    </script>
+
+</body>
+</html>
