@@ -164,8 +164,29 @@
 
 > Modelos de serviço em nuvem
 
-       - A computação em nuvem é estruturada em três modelos de serviço principais. O primeiro é a Infraestrutura como Serviço (IaaS), onde o provedor de nuvem fornece recursos básicos de computação, como máquinas virtuais, armazenamento e redes virtuais. O cliente tem controle total sobre o sistema operacional e os aplicativos instalados, sendo responsável pela manutenção e segurança lógica do ambiente.
+       - A computação em nuvem é estruturada em três modelos de serviço principais. 
+       
+       - O primeiro é a Infraestrutura como Serviço (IaaS), onde o provedor de nuvem fornece recursos básicos de computação, como máquinas virtuais, armazenamento e redes virtuais. O cliente tem controle total sobre o sistema operacional e os aplicativos instalados, sendo responsável pela manutenção e segurança lógica do ambiente.
 
        - O segundo modelo é a Plataforma como Serviço (PaaS). Neste modelo, o provedor oferece um ambiente completo de desenvolvimento e implantação, abstraindo não apenas o hardware, mas também o sistema operacional, os servidores web e os sistemas de banco de dados. Os desenvolvedores podem focar de modo exclusivo na escrita do código de seus aplicativos, sem se preocupar com a configuração da infraestrutura subjacente.
 
        - O terceiro modelo é o Software como Serviço (SaaS). Aqui, o provedor entrega um aplicativo de software completo e funcional via internet. O cliente não gerencia a infraestrutura, a plataforma ou o código do aplicativo; ele apenas consome o serviço por meio de um navegador web. Exemplos comuns de SaaS incluem serviços de e-mail corporativo, sistemas de gestão empresarial (ERP) e plataformas de colaboração online.
+
+# Componentes de Hardware
+
+   > Arquitetura clássica de Von Neumann  
+
+   - fundamenta-se em três pilares estruturais distintos, mas interdependentes: a Unidade Central de Processamento (UCP ou CPU), a Memória Principal e o Sistema de Entrada e Saída (E/S). A CPU atua como o cérebro do sistema, responsável por buscar, decodificar e executar as instruções. A Memória Principal funciona como um repositório temporário de acesso rápido, abrigando os dados brutos e o código binário do programa em execução. O Sistema de Entrada e Saída atua como a interface de comunicação com o mundo externo, permitindo a inserção de dados por meio de teclados ou sensores e a extração de resultados por meio de monitores ou atuadores mecânicos.
+
+   > Interconexão de componentes e barramentos
+
+   -  o barramento do sistema é subdividido em três categorias funcionais: o barramento de dados, o barramento de endereços e o barramento de controle 
+
+   - Barramento de dados
+        Via bidirecional que transporta os bits de informação reais entre os componentes. Sua largura em bits define a quantidade de dados transferidos por ciclo.
+       
+   - Barramento de endereços
+        Via unidirecional que transporta a localização específica da memória ou do dispositivo de E/S que a CPU deseja acessar naquele momento.
+        
+   - Barramento de controle
+        Conjunto de linhas que transmitem sinais de comando, como leitura, gravação e interrupções, coordenando as ações de todos os módulos do sistema.    
